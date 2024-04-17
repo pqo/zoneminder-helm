@@ -79,8 +79,8 @@ spec:
           persistentVolumeClaim:
             claimName: {{ include "zoneminder.fullname" . }}-config-pvc
         - name: data
-          persistentVolumeClaim:
-            claimName: {{ include "zoneminder.fullname" . }}-data-pvc
+          hostPath:
+            path: /mnt/gfs/share1/zm-data
         - name: dshm
           emptyDir:
             medium: Memory
