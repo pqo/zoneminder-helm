@@ -80,7 +80,7 @@ spec:
             claimName: {{ include "zoneminder.fullname" . }}-config-pvc
         - name: data
           hostPath:
-            path: /mnt/gfs/share1/zm-data
+            path: {{ .Values.storage.data.path }}
         - name: dshm
           emptyDir:
             medium: Memory
