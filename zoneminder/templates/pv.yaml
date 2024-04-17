@@ -9,16 +9,3 @@ spec:
     requests:
       storage: {{ .Values.storage.config.size }}
   storageClassName: {{ .Values.storage.config.className }}
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: {{ include "zoneminder.fullname" . }}-data-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce # not ReadWriteMany because image doesn't have mount.nfs
-  resources:
-    requests:
-      storage: {{ .Values.storage.data.size }}
-  storageClassName: {{ .Values.storage.data.className }}
----
