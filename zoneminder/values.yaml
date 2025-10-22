@@ -10,15 +10,13 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
-
-
 service:
   notificationPort: 9000
   httpsPort: 8443
 
 storage:
   configSize: 100Mi
-  dataSize: 10Gi
+  dataSize: 20Gi
   className: ssd
 
 timezone: America/Chicago
@@ -35,4 +33,3 @@ resources:
   limits:
     cpu: 250m
     memory: 1000Mi
-  
