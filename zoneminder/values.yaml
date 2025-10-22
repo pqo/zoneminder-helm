@@ -16,7 +16,7 @@ service:
 
 storage:
   configSize: 100Mi
-  dataSize: 20Gi
+  dataSize: 10Gi
   className: ssd
 
 timezone: America/Chicago
