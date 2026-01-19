@@ -83,8 +83,8 @@ spec:
           persistentVolumeClaim:
             claimName: {{ include "zoneminder.fullname" . }}-config-pvc
         - name: data
-          hostPath:
-            path: {{ .Values.storage.data.path }}
+          persistentVolumeClaim:
+            claimName: {{ include "zoneminder.fullname" . }}-data-pvc
         - name: dshm
           emptyDir:
             medium: Memory
